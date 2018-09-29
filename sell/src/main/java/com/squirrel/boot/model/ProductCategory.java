@@ -3,6 +3,9 @@ package com.squirrel.boot.model;
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -12,13 +15,16 @@ import javax.persistence.Table;
  * DESC:
  */
 @Table(name = "product_category")
+@Entity
 @Data
 @DynamicUpdate(true)
 public class ProductCategory {
-    private String category_id; //int(11) NOT NULL AUTO_INCREMENT,
-    private String category_name; //varchar(64) NOT NULL COMMENT '类目名字',
-    private String category_type; //int(11) NOT NULL COMMENT '类目编号',
-    private String create_time; //timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    private String update_time; //timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+    @Id
+    @GeneratedValue
+    private Integer categoryId; //int(11) NOT NULL AUTO_INCREMENT,
+    private String categoryName; //varchar(64) NOT NULL COMMENT '类目名字',
+    private Integer categoryType; //int(11) NOT NULL COMMENT '类目编号',
+//    private String createTime; //timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+//    private String updateTime; //timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
     
 }

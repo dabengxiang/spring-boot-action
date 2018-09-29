@@ -1,6 +1,10 @@
 package com.squirrel.boot.dao;
 
+import com.squirrel.boot.model.ProductCategory;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
 
 /**
  * project name : action-in-boot
@@ -9,5 +13,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * DESC:
  */
 
-public interface ProductCategoryDao extends JpaRepository {
+public interface ProductCategoryDao extends JpaRepository<ProductCategory,Integer> {
+
+    List<ProductCategory> findByCategoryTypeIn(List<Integer> ids);
+
+
 }
