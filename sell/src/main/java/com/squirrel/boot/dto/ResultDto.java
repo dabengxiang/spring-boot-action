@@ -9,7 +9,29 @@ import lombok.Data;
  */
 @Data
 public class ResultDto<T> {
+    private Integer status;
     private String msg;
     private  String code;
     private T data;
+
+
+    public static<T>   ResultDto success(T data){
+        ResultDto resultDto = new ResultDto();
+        resultDto.setData(data);
+        resultDto.setMsg("成功");
+        resultDto.setCode("1");
+        resultDto.setStatus(200);
+        return resultDto;
+    }
+
+
+    public static <T>  ResultDto failure(String msg){
+        ResultDto resultDto = new ResultDto();
+        resultDto.setMsg(msg);
+        resultDto.setCode("0");
+        resultDto.setStatus(500);
+        return resultDto;
+    }
+
+
 }

@@ -59,7 +59,7 @@ public class ProductInfoServiceImpl implements ProductInfoService {
                     smallList.add(productInfoDto);
                 }
             }
-
+            productDto.setFoods(smallList);
             bigList.add(productDto);
 
         }
