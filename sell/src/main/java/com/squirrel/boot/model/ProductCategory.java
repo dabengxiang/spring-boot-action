@@ -24,7 +24,17 @@ public class ProductCategory {
     private Integer categoryId; //int(11) NOT NULL AUTO_INCREMENT,
     private String categoryName; //varchar(64) NOT NULL COMMENT '类目名字',
     private Integer categoryType; //int(11) NOT NULL COMMENT '类目编号',
-//    private String createTime; //timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-//    private String updateTime; //timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
-    
+  private String createTime; //timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  private String updateTime; //timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+
+
+    public ProductCategory() {
+    }
+
+    public ProductCategory(String categoryName, Integer categoryType) {
+        this.categoryName = categoryName;
+        this.categoryType = categoryType;
+    }
+
+
 }

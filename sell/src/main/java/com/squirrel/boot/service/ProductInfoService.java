@@ -22,4 +22,6 @@ public interface ProductInfoService {
 
 
     public void save(ProductInfo productInfo);
+
+    List<ProductInfo> findUpAll();
 }

@@ -1,6 +1,7 @@
 package com.squirrel.boot.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.squirrel.boot.VO.ProductInfoVO;
 import lombok.Data;
 
 import java.util.List;
@@ -21,5 +22,7 @@ public class ProductDto {
     @JsonProperty("type")
     private Integer categoryType; //int(11) NOT NULL COMMENT '类目编号',
 
+    @JsonProperty("foods")
     private List<ProductInfoDto> foods;
+
 }

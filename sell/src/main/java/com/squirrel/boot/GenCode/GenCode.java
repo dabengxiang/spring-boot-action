@@ -6,7 +6,7 @@ public class GenCode {
 
     public static void main(String[] args) throws Exception {
         SQLManager sqlManager = new SQLManagerTemplate().sqlManager("jdbc:mysql://localhost:3306/boot-sell?useUnicode=true&characterEncoding=UTF8&serverTimezone=Asia/Shanghai&useSSL=false", "root", "root");
-        sqlManager.genPojoCodeToConsole("product_info");
-        sqlManager.genSQLTemplateToConsole("product_info");
+        sqlManager.genPojoCodeToConsole("order_detail");
+        sqlManager.genSQLTemplateToConsole("order_detail");
     }
 }

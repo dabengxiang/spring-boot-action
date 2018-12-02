@@ -11,7 +11,7 @@ import lombok.Data;
 public class ResultDto<T> {
     private Integer status;
     private String msg;
-    private  String code;
+        private  Integer code;
     private T data;
 
 
@@ -19,7 +19,7 @@ public class ResultDto<T> {
         ResultDto resultDto = new ResultDto();
         resultDto.setData(data);
         resultDto.setMsg("成功");
-        resultDto.setCode("1");
+        resultDto.setCode(0);
         resultDto.setStatus(200);
         return resultDto;
     }
@@ -28,7 +28,7 @@ public class ResultDto<T> {
     public static <T>  ResultDto failure(String msg){
         ResultDto resultDto = new ResultDto();
         resultDto.setMsg(msg);
-        resultDto.setCode("0");
+        resultDto.setCode(1);
         resultDto.setStatus(500);
         return resultDto;
     }

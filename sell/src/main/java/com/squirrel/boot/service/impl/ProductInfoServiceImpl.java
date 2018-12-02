@@ -39,7 +39,7 @@ public class ProductInfoServiceImpl implements ProductInfoService {
 
     @Override
     public List<ProductDto> listDto() {
-        List<ProductInfo> productInfos = productInfoDao.findByProductStatus(1);
+        List<ProductInfo> productInfos = productInfoDao.findByProductStatus(0);
         List<Integer> typeIdsList = productInfos.stream().map(e -> e.getCategoryType()).collect(Collectors.toList());
 
         List<ProductCategory> ProductCategoryList = productCategoryDao.findByCategoryTypeIn(typeIdsList);
@@ -73,6 +73,10 @@ public class ProductInfoServiceImpl implements ProductInfoService {
         productInfoDao.save(productInfo);
     }
 
+    @Override
+    public List<ProductInfo> findUpAll() {
+        return productInfoDao.findByProductStatus(0);
+    }
 
 
 }
